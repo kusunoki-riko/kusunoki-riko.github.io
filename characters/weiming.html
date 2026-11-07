@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>未名 — 楠理子</title>
+  <meta name="description" content="示例自设：未名。">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    try {
+      if (localStorage.getItem("nr-theme") === "night") {
+        document.documentElement.setAttribute("data-theme", "night");
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <div class="topbar">
+    <header class="site-header">
+      <a class="brand" href="../index.html">楠理子</a>
+      <nav class="nav" aria-label="站内">
+        <a href="../about.html">关于</a>
+        <a href="index.html" aria-current="page">自设</a>
+        <a href="../writing/index.html">书页</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false">夜读</button>
+    </header>
+  </div>
+  <main id="main" class="wrap">
+    <p class="draft-note">这是示例角色页。换成你的自设时，改标题、简介和下面每一栏。有图的话，把图片放进 <code>images/</code>，按下面注释把字牌换成图片。方括号是待填提示。</p>
+    <div class="character-head">
+      <div class="portrait-fallback" aria-hidden="true">未</div>
+      <!-- 有图后可换成：
+      <img src="../images/weiming.jpg" alt="未名">
+      -->
+      <div>
+        <p class="kicker">示例角色</p>
+        <h1>未名</h1>
+        <p class="tagline">还没被写完的人。</p>
+      </div>
+    </div>
+    <dl class="profile">
+      <div>
+        <dt>状态</dt>
+        <dd>占位，可整页替换</dd>
+      </div>
+      <div>
+        <dt>一句话</dt>
+        <dd>沿着退潮的水印走路，不喜欢被写成已经想明白的人。</dd>
+      </div>
+      <div>
+        <dt>外形</dt>
+        <dd>〔待填：身高、发色、常穿的衣服，写你自己的设定。〕</dd>
+      </div>
+      <div>
+        <dt>性情</dt>
+        <dd>〔待填。〕</dd>
+      </div>
+      <div>
+        <dt>备注</dt>
+        <dd>〔年龄、身份、关系，想公开再写。不想列成表格，也可以删掉这整张表，改成几段散文。〕</dd>
+      </div>
+      <div>
+        <dt>出现在</dt>
+        <dd><a href="../writing/tide/index.html">《退潮》</a>（示例短篇）</dd>
+      </div>
+    </dl>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 楠理子</p>
+      <p>纸页小站 · 可在夜读里看小说</p>
+    </div>
+  </footer>
+  <script src="../js/theme.js"></script>
+</body>
+</html>
