@@ -2,7 +2,11 @@
    楠理子的个人小站 · 现代东方编辑风
    站点固定为深色模式。
    改气质主要动 :root 里的颜色与字体。
+   正文字体：霞鹜文楷（jsDelivr，常规 400 + 粗体 700）。
    ========================================================= */
+
+@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css");
+@import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-bold.css");
 
 :root {
   color-scheme: dark;
@@ -22,7 +26,7 @@
   --line: rgba(237, 232, 222, 0.1);
   --line-strong: rgba(237, 232, 222, 0.2);
 
-  --accent: #84cdc4;
+  --accent: #3b619a;
   --accent-strong: #b8eae3;
   --accent-soft: rgba(132, 205, 196, 0.12);
   --on-accent: #0c1a18;
@@ -41,9 +45,9 @@
   --measure: 72rem;
   --reading: 42rem;
 
-  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", "宋体", serif;
-  --sans: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
-  --mono: "SFMono-Regular", Consolas, "Sarasa Mono SC", monospace;
+  --serif: "LXGW WenKai", "霞鹜文楷", "KaiTi", "楷体", "STKaiti", serif;
+  --sans: "LXGW WenKai", "霞鹜文楷", "KaiTi", "楷体", "STKaiti", sans-serif;
+  --mono: "LXGW WenKai", "霞鹜文楷", "KaiTi", "楷体", "STKaiti", sans-serif;
 }
 
 *,
@@ -67,8 +71,8 @@ body {
   background-color: var(--bg);
   line-height: 1.7;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 body::before {
@@ -177,19 +181,12 @@ img {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.65rem;
-  background: var(--ink);
-  color: var(--bg);
-  font-family: var(--serif);
-  font-size: 1rem;
-  line-height: 1;
-  letter-spacing: 0;
-  box-shadow: var(--shadow-sm);
-  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  display: block;
+  width: 2.85rem;
+  height: 2.85rem;
+  object-fit: contain;
+  background: transparent;
+  transition: transform 0.25s ease;
 }
 
 .brand:hover {
@@ -197,9 +194,7 @@ img {
 }
 
 .brand:hover .brand-mark {
-  background: var(--accent);
-  color: var(--on-accent);
-  transform: rotate(-4deg);
+  transform: rotate(-6deg);
 }
 
 .nav {
@@ -239,8 +234,31 @@ img {
   padding: clamp(2rem, 4vw, 3rem) 0 clamp(4rem, 8vw, 6rem);
 }
 
+body.home {
+  min-height: 100dvh;
+}
+
 body.home .wrap {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   padding-top: 0;
+  padding-bottom: 0.75rem;
+}
+
+body.home .hero {
+  flex: 1 0 auto;
+  padding-top: clamp(1rem, 2.4vh, 2.2rem);
+  padding-bottom: 0.2rem;
+}
+
+body.home .doors-section {
+  flex: none;
+  margin-top: 0.85rem;
+}
+
+body.home .footer-inner {
+  padding: 0.85rem 0 1rem;
 }
 
 .wrap.prose {
@@ -601,7 +619,7 @@ p {
 
 .doors {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -610,10 +628,10 @@ p {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
-  height: 100%;
-  min-height: 14rem;
-  padding: 1.55rem;
+  gap: 0.35rem;
+  height: auto;
+  min-height: 0;
+  padding: 1.05rem 1.15rem 0.95rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
@@ -654,30 +672,32 @@ p {
   color: var(--seal);
   font-family: var(--mono);
   font-size: 0.7rem;
+  line-height: 1;
   letter-spacing: 0.18em;
 }
 
 .door-title {
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.45rem;
+  line-height: 1.25;
   letter-spacing: 0.06em;
 }
 
 .door-desc {
   max-width: 22rem;
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.5;
 }
 
 .door-arrow {
   display: grid;
   place-items: center;
   align-self: flex-end;
-  width: 2.25rem;
-  height: 2.25rem;
-  margin-top: auto;
+  width: 1.85rem;
+  height: 1.85rem;
+  margin-top: 0.15rem;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
   color: var(--muted);
@@ -690,6 +710,46 @@ p {
   background: var(--accent);
   color: var(--on-accent);
   transform: rotate(-45deg);
+}
+
+/* ---------- 写真 ---------- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.photo-grid figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.photo-grid figcaption {
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+.empty-shelf {
+  margin: 0;
+  color: var(--faint);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
 }
 
 /* ---------- 条目卡片 ---------- */

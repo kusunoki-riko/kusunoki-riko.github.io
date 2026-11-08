@@ -7,6 +7,7 @@
 - 首页 `index.html`
 - 关于 `about.html`
 - 书页 `writing/`
+- 写真 `photos/`
 
 现在放着的短篇《退潮》是示例，用来看版式。发布前换成你自己的内容，或者整篇删掉。页面顶部的虚线纸条是占位提示，写完删掉那段 `<p class="draft-note">`。
 
@@ -40,6 +41,12 @@ python -m http.server 8080
 4. 在 `writing/index.html` 登记这篇作品。想出现在首页「最近」，再去根目录的 `index.html` 加一条。
 
 正文每一段用一个 `<p>`。中文段首缩进由样式负责，不用自己打空格。
+
+### 新增一张写真
+
+1. 把图片放进 `images/photos/`。
+2. 打开 `photos/index.html`，按页顶纸条里的那一格，填上文件名和说明。
+3. 放进照片后，删掉「还没有照片」那一句。
 
 ## 发布到 GitHub Pages
 
