@@ -7,32 +7,31 @@
   <meta name="description" content="楠理子写的小说与短篇。">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css">
-  <script>
-    try {
-      if (localStorage.getItem("nr-theme") === "night") {
-        document.documentElement.setAttribute("data-theme", "night");
-      }
-    } catch (e) {}
-  </script>
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
   <div class="topbar">
     <header class="site-header">
-      <a class="brand" href="../index.html">楠理子</a>
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">楠</span>
+        <span class="brand-name">楠理子</span>
+      </a>
       <nav class="nav" aria-label="站内">
         <a href="../about.html">关于</a>
-        <a href="../characters/index.html">自设</a>
         <a href="index.html" aria-current="page">书页</a>
       </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false">夜读</button>
     </header>
   </div>
+
   <main id="main" class="wrap">
     <p class="draft-note">新增一篇：复制整个 <code>writing/tide/</code> 文件夹并改名，改简介和章节，再在下面登记。示例短篇可以整组删掉。</p>
-    <p class="kicker">书页</p>
-    <h1>写过的</h1>
-    <p class="lede">小说、短篇、还没想好放哪的片段，都从这里进。</p>
+
+    <header class="page-head">
+      <p class="kicker">书页</p>
+      <h1>写过的</h1>
+      <p class="lede">小说、短篇、还没想好放哪的片段，都从这里进。</p>
+    </header>
+
     <ul class="entry-list">
       <li class="entry">
         <a href="tide/index.html">
@@ -43,12 +42,13 @@
       </li>
     </ul>
   </main>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <p>© 2026 楠理子</p>
-      <p>纸页小站 · 可在夜读里看小说</p>
+      <p>纸页小站 · 夜色里读小说</p>
     </div>
   </footer>
-  <script src="../js/theme.js"></script>
+  <script src="../js/site.js"></script>
 </body>
 </html>

@@ -4,65 +4,90 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>楠理子</title>
-  <meta name="description" content="楠理子的个人小站：自我介绍、自设与小说。">
+  <meta name="description" content="楠理子的个人小站：自我介绍与小说。">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    try {
-      if (localStorage.getItem("nr-theme") === "night") {
-        document.documentElement.setAttribute("data-theme", "night");
-      }
-    } catch (e) {}
-  </script>
 </head>
 <body class="home">
   <a class="skip" href="#main">跳到正文</a>
   <div class="topbar">
     <header class="site-header">
-      <a class="brand" href="index.html" aria-current="page">楠理子</a>
+      <a class="brand" href="index.html" aria-current="page">
+        <span class="brand-mark" aria-hidden="true">楠</span>
+        <span class="brand-name">楠理子</span>
+      </a>
       <nav class="nav" aria-label="站内">
         <a href="about.html">关于</a>
-        <a href="characters/index.html">自设</a>
         <a href="writing/index.html">书页</a>
       </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false">夜读</button>
     </header>
   </div>
+
   <main id="main" class="wrap">
-    <p class="draft-note">占位页。删掉这张纸条，再把下面的名字、句子和「最近」换成你自己的。示例角色和示例短篇也可以整篇删掉。</p>
-    <p class="seal" aria-hidden="true">理</p>
-    <h1 class="home-title">楠理子</h1>
-    <p class="tagline">把还没写完的人和故事，放在这里。</p>
-    <p class="lede">这里是我的个人小站。关于我是谁、我写下的角色，还有正在写的小说，都从下面三扇门进去。</p>
+    <p class="draft-note">占位页。删掉这张纸条，再把下面的名字、句子和「最近」换成你自己的。示例短篇也可以整篇删掉。</p>
 
-    <ul class="doors">
-      <li>
-        <a href="about.html">
-          <span class="door-kicker">01</span>
-          <span class="door-title">关于</span>
-          <span class="door-desc">名字、近况，以及想被怎样认识。</span>
-        </a>
-      </li>
-      <li>
-        <a href="characters/index.html">
-          <span class="door-kicker">02</span>
-          <span class="door-title">自设</span>
-          <span class="door-desc">还没被写完的人，住在单独的页面里。</span>
-        </a>
-      </li>
-      <li>
-        <a href="writing/index.html">
-          <span class="door-kicker">03</span>
-          <span class="door-title">书页</span>
-          <span class="door-desc">小说、短篇和片段。夜读适合慢慢看。</span>
-        </a>
-      </li>
-    </ul>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>个人小站 · 写作</p>
+        <h1 class="home-title">楠理子<span class="title-seal" aria-hidden="true">理</span></h1>
+        <p class="tagline">把还没写完的人和故事，放在这里。</p>
+        <p class="lede">这里是我的个人小站。关于我，还有在写的小说，都从下面两扇门进去。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="writing/index.html">去书页 <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="about.html">认识我</a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="站点摘句">
+        <div class="hero-card">
+          <div class="hero-card-head">
+            <span>摘句</span>
+            <span>EST. 2026</span>
+          </div>
+          <blockquote class="hero-quote">没写完的人，<br>才有地方可去。</blockquote>
+          <div class="hero-card-foot">
+            <span class="hero-seal" aria-hidden="true">理</span>
+            <span>楠理子 · 纸页小站</span>
+          </div>
+        </div>
+      </aside>
+    </section>
 
-    <hr class="section-rule">
+    <section class="section doors-section" aria-labelledby="doors-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">入口</p>
+          <h2 id="doors-title">从这两扇门进去</h2>
+        </div>
+        <p class="section-note">慢慢看，不着急</p>
+      </div>
+      <ul class="doors">
+        <li>
+          <a href="about.html">
+            <span class="door-kicker">01</span>
+            <span class="door-title">关于</span>
+            <span class="door-desc">名字、近况，以及想被怎样认识。</span>
+            <span class="door-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+        <li>
+          <a href="writing/index.html">
+            <span class="door-kicker">02</span>
+            <span class="door-title">书页</span>
+            <span class="door-desc">小说、短篇和片段。夜色里适合慢慢看。</span>
+            <span class="door-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
-    <section aria-labelledby="recent-title">
-      <h2 id="recent-title">最近</h2>
+    <section class="section recent" aria-labelledby="recent-title">
+      <div class="section-head">
+        <div>
+          <p class="kicker">最近更新</p>
+          <h2 id="recent-title">最近</h2>
+        </div>
+        <p class="section-note">从最新的一页开始</p>
+      </div>
       <ul class="entry-list">
         <li class="entry">
           <a href="writing/tide/01.html">
@@ -74,12 +99,13 @@
       </ul>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <p>© 2026 楠理子</p>
-      <p>纸页小站 · 可在夜读里看小说</p>
+      <p>纸页小站 · 夜色里读小说</p>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

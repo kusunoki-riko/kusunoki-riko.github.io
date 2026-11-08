@@ -7,62 +7,62 @@
   <meta name="description" content="关于楠理子。">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    try {
-      if (localStorage.getItem("nr-theme") === "night") {
-        document.documentElement.setAttribute("data-theme", "night");
-      }
-    } catch (e) {}
-  </script>
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
   <div class="topbar">
     <header class="site-header">
-      <a class="brand" href="index.html">楠理子</a>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">楠</span>
+        <span class="brand-name">楠理子</span>
+      </a>
       <nav class="nav" aria-label="站内">
         <a href="about.html" aria-current="page">关于</a>
-        <a href="characters/index.html">自设</a>
         <a href="writing/index.html">书页</a>
       </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false">夜读</button>
     </header>
   </div>
+
   <main id="main" class="wrap">
     <p class="draft-note">占位：删掉这张纸条，再把下面几段换成你的简介。方括号里的句子是提示，写完就删掉。</p>
-    <p class="kicker">关于</p>
-    <h1>楠理子</h1>
-    <p class="lede">我把这个站用来放自我介绍、自设，和我写的小说。</p>
-    <p>〔在这里写一段你愿意公开的话。可以是你是谁、平时喜欢什么、为什么开始写。不必很长。〕</p>
-    <p>〔近况也可以放在这里：正在写什么、最近在想的事。不想写近况，就删掉这一段。〕</p>
-    <p>〔想留联系方式的话，写邮箱或社交账号。不想公开，就删掉这一段。〕</p>
 
-    <hr class="section-rule">
+    <div class="about-layout">
+      <header class="about-head">
+        <p class="kicker">关于</p>
+        <h1>楠理子</h1>
+        <p class="tagline">把还没写完的人和故事，放在这里。</p>
+        <div class="about-seal" aria-hidden="true">理</div>
+      </header>
 
-    <section aria-labelledby="where-title">
-      <h2 id="where-title">站里有什么</h2>
-      <ul class="entry-list">
-        <li class="entry">
-          <a href="characters/index.html">
-            <strong>自设</strong>
-            <span class="entry-meta">角色各自一页。现在有一则示例。</span>
-          </a>
-        </li>
-        <li class="entry">
-          <a href="writing/index.html">
-            <strong>书页</strong>
-            <span class="entry-meta">作品目录和章节。现在有一篇示例短篇。</span>
-          </a>
-        </li>
-      </ul>
-    </section>
+      <div class="about-body">
+        <p class="lede">我把这个站用来放自我介绍，和我写的小说。</p>
+        <p>〔在这里写一段你愿意公开的话。可以是你是谁、平时喜欢什么、为什么开始写。不必很长。〕</p>
+        <p>〔近况也可以放在这里：正在写什么、最近在想的事。不想写近况，就删掉这一段。〕</p>
+        <p>〔想留联系方式的话，写邮箱或社交账号。不想公开，就删掉这一段。〕</p>
+
+        <hr class="section-rule">
+
+        <section aria-labelledby="where-title">
+          <h2 id="where-title">站里有什么</h2>
+          <ul class="entry-list">
+            <li class="entry">
+              <a href="writing/index.html">
+                <strong>书页</strong>
+                <span class="entry-meta">作品目录和章节。现在有一篇示例短篇。</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
   </main>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <p>© 2026 楠理子</p>
-      <p>纸页小站 · 可在夜读里看小说</p>
+      <p>纸页小站 · 夜色里读小说</p>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>

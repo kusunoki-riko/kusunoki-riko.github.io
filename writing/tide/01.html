@@ -7,32 +7,32 @@
   <meta name="description" content="示例短篇《退潮》其一。">
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../../css/style.css">
-  <script>
-    try {
-      if (localStorage.getItem("nr-theme") === "night") {
-        document.documentElement.setAttribute("data-theme", "night");
-      }
-    } catch (e) {}
-  </script>
 </head>
 <body>
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
   <a class="skip" href="#main">跳到正文</a>
   <div class="topbar">
     <header class="site-header">
-      <a class="brand" href="../../index.html">楠理子</a>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark" aria-hidden="true">楠</span>
+        <span class="brand-name">楠理子</span>
+      </a>
       <nav class="nav" aria-label="站内">
         <a href="../../about.html">关于</a>
-        <a href="../../characters/index.html">自设</a>
         <a href="../index.html" aria-current="page">书页</a>
       </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false">夜读</button>
     </header>
   </div>
+
   <main id="main" class="wrap prose">
-    <p class="draft-note">示例正文，用来看阅读页的行距和夜读。整篇换成你的小说即可。对话跟叙述一样，各写一个段落。</p>
-    <p class="kicker">退潮</p>
-    <h1>其一</h1>
-    <p class="chapter-label">海岸把声音放低了</p>
+    <p class="draft-note">示例正文，用来看阅读页的行距和深色模式。整篇换成你的小说即可。对话跟叙述一样，各写一个段落。</p>
+
+    <header class="chapter-head">
+      <p class="kicker">退潮</p>
+      <h1>其一</h1>
+      <p class="chapter-label">海岸把声音放低了</p>
+    </header>
+
     <p>潮水退下去的时候，沙滩上会留下一些暂时还没想好去处的东西。</p>
     <p>未名沿着水印往前走，鞋底很快湿了。那条线并不直，有的地方鼓出来，像谁中途改了主意。他捡到的第一件东西是半块塑料瓶，第二件是一枚开着的贝壳。瓶他扔掉，壳留在掌心。</p>
     <p>「空的。」旁边有人说。</p>
@@ -41,18 +41,23 @@
     <p>「不是。」她说，「我只是来确认你还没被写完。没写完的人，才有地方可去。」</p>
     <p>浪又近了一点。贝壳里进了一滴水，把空填上了，又从另一头漏掉。未名把壳放回沙上，让它自己决定要不要跟下一波浪走。</p>
     <p>他回头的时候，石头上已经没有人了。只有一串很快会被抹平的脚印，朝着他还没去过的那一段海岸。</p>
+
     <p class="end-mark">示例完</p>
+
     <nav class="chapter-nav" aria-label="章节">
-      <a href="index.html">← 《退潮》目录</a>
-      <a href="../../characters/weiming.html">人物 · 未名</a>
+      <a href="index.html">
+        <span class="chapter-nav-label">← 目录</span>
+        <span>《退潮》</span>
+      </a>
     </nav>
   </main>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <p>© 2026 楠理子</p>
-      <p>纸页小站 · 可在夜读里看小说</p>
+      <p>纸页小站 · 夜色里读小说</p>
     </div>
   </footer>
-  <script src="../../js/theme.js"></script>
+  <script src="../../js/site.js"></script>
 </body>
 </html>

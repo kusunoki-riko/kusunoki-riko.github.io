@@ -7,39 +7,36 @@
   <meta name="description" content="这一页不在站上。">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css">
-  <script>
-    try {
-      if (localStorage.getItem("nr-theme") === "night") {
-        document.documentElement.setAttribute("data-theme", "night");
-      }
-    } catch (e) {}
-  </script>
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
   <div class="topbar">
     <header class="site-header">
-      <a class="brand" href="index.html">楠理子</a>
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">楠</span>
+        <span class="brand-name">楠理子</span>
+      </a>
       <nav class="nav" aria-label="站内">
         <a href="about.html">关于</a>
-        <a href="characters/index.html">自设</a>
         <a href="writing/index.html">书页</a>
       </nav>
-      <button class="theme-toggle" type="button" data-theme-toggle hidden aria-pressed="false">夜读</button>
     </header>
   </div>
-  <main id="main" class="wrap">
-    <p class="kicker">404</p>
+
+  <main id="main" class="wrap error-page">
+    <p class="error-code" aria-hidden="true">404</p>
+    <p class="kicker">找不到</p>
     <h1>这一页不在</h1>
     <p class="lede">链接可能写错了，或者那篇已经挪走。回到门口就好。</p>
-    <p><a href="index.html">回到首页</a></p>
+    <a class="btn btn-primary" href="index.html">回到首页 <span class="arrow" aria-hidden="true">→</span></a>
   </main>
+
   <footer class="site-footer">
     <div class="footer-inner">
       <p>© 2026 楠理子</p>
-      <p>纸页小站 · 可在夜读里看小说</p>
+      <p>纸页小站 · 夜色里读小说</p>
     </div>
   </footer>
-  <script src="js/theme.js"></script>
+  <script src="js/site.js"></script>
 </body>
 </html>
