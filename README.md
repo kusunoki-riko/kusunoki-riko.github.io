@@ -27,11 +27,11 @@ python -m http.server 8080
 
 ## 改内容
 
-名字出现在每一页的页眉、页脚和标题里。要换笔名，在项目里搜索「楠理子」一起替换。页眉左侧小方牌里的「楠」、首页标题旁的印章「理」、关于页的印章、`favicon.svg` 里的「理」，也都要一起看一眼。
+名字出现在每一页的页眉、页脚和标题里。要换笔名，在项目里搜索「楠理子」一起替换。站名旁的小头像是 `images/icon.png`；首页和关于页的篆书「楠」印是 `images/seal-nan.png`；`favicon.svg` 里还有一个「理」字，换名时也一起改。
 
 颜色在 `css/style.css` 最上面的 `:root`。大标题用 `--serif`，正文用 `--sans`，改这两个变量就能换字体。
 
-首页右侧的摘句在 `index.html` 的 `.hero-quote`，换成你自己的句子。阅读页顶部的进度条由 `js/site.js` 控制，不需要可以删掉 HTML 里的 `.reading-progress`。
+首页左侧的题记在 `index.html` 的 `.hero-quote`，换成你自己的句子；下面「楠 理子」的落款、注音和印章也在同一段。阅读页顶部的进度条由 `js/site.js` 控制，不需要可以删掉 HTML 里的 `.reading-progress`。
 
 ### 新增一篇小说
 
@@ -47,6 +47,19 @@ python -m http.server 8080
 1. 把图片放进 `images/photos/`。
 2. 打开 `photos/index.html`，按页顶纸条里的那一格，填上文件名和说明。
 3. 放进照片后，删掉「还没有照片」那一句。
+
+### 图片与字体
+
+- `images/portrait.jpg`：首页右侧的立绘。
+- `images/icon.png`：页眉的小头像和浏览器图标。
+- `images/seal-nan.png`：篆书「楠」印的透明 PNG，首页与关于页共用。想换字，重新渲染一张同名图片即可。
+
+正文字体是霞鹜文楷，通过 jsDelivr 引入；标题使用系统宋体，不额外加载字体文件。
+
+## 字体与素材授权
+
+- 霞鹜文楷（LXGW WenKai）以 SIL Open Font License 1.1 发布，站点通过 CDN 引用，未随仓库分发字体文件。
+- 篆书「楠」字取自中央研究院[小學堂](https://xiaoxue.iis.sinica.edu.tw/)发布的崇羲篆體（作者王心怡、季旭昇），字体以 [CC BY-ND 3.0 臺灣及其後版本](https://creativecommons.org/licenses/by-nd/3.0/tw/)发布。`images/seal-nan.png` 是用该字体渲染出的单字图片，仓库不包含字体文件。
 
 ## 发布到 GitHub Pages
 

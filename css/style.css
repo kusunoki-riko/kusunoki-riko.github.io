@@ -1,6 +1,7 @@
 /* =========================================================
    楠理子的个人小站 · 现代东方编辑风
    站点固定为深色模式。
+   配色取自首页立绘：深靛黑、雾蓝紫、月光金。
    改气质主要动 :root 里的颜色与字体。
    正文字体：霞鹜文楷（jsDelivr，常规 400 + 粗体 700）。
    ========================================================= */
@@ -11,28 +12,28 @@
 :root {
   color-scheme: dark;
 
-  --bg: #0f1416;
-  --bg-deep: #0a0e10;
-  --surface: rgba(26, 34, 37, 0.66);
-  --surface-solid: #172024;
+  --bg: #0c0e18;
+  --bg-deep: #080910;
+  --surface: rgba(30, 34, 56, 0.66);
+  --surface-solid: #161a2a;
   --surface-soft: rgba(255, 255, 255, 0.04);
-  --header-bg: rgba(15, 20, 22, 0.78);
+  --header-bg: rgba(12, 14, 24, 0.78);
 
-  --ink: #ede8de;
-  --ink-soft: #d2cbc0;
-  --muted: #a49c90;
-  --faint: #8b8377;
+  --ink: #f1eef9;
+  --ink-soft: #d8d4e8;
+  --muted: #a9a6bd;
+  --faint: #8f8ba3;
 
-  --line: rgba(237, 232, 222, 0.1);
-  --line-strong: rgba(237, 232, 222, 0.2);
+  --line: rgba(241, 238, 249, 0.1);
+  --line-strong: rgba(241, 238, 249, 0.2);
 
-  --accent: #3b619a;
-  --accent-strong: #b8eae3;
-  --accent-soft: rgba(132, 205, 196, 0.12);
-  --on-accent: #0c1a18;
+  --accent: #8f9fe8;
+  --accent-strong: #b7c2f4;
+  --accent-soft: rgba(143, 159, 232, 0.14);
+  --on-accent: #0c0e18;
 
-  --seal: #e2948c;
-  --seal-soft: rgba(226, 148, 140, 0.12);
+  --seal: #d8b46a;
+  --seal-soft: rgba(216, 180, 106, 0.12);
 
   --radius-sm: 0.75rem;
   --radius: 1.25rem;
@@ -361,82 +362,124 @@ p {
 }
 
 .hero-copy > :nth-child(2) {
-  animation-delay: 0.06s;
+  animation-delay: 0.08s;
 }
 
 .hero-copy > :nth-child(3) {
-  animation-delay: 0.12s;
+  animation-delay: 0.16s;
 }
 
-.hero-copy > :nth-child(4) {
-  animation-delay: 0.18s;
-}
-
-.hero-copy > :nth-child(5) {
-  animation-delay: 0.24s;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
+.hero-quote {
   margin: 0;
-  padding: 0.35rem 0.8rem 0.35rem 0.62rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  color: var(--muted);
-  font-size: 0.76rem;
-  letter-spacing: 0.12em;
-}
-
-.eyebrow-dot {
-  width: 0.44rem;
-  height: 0.44rem;
-  border-radius: 50%;
-  background: var(--seal);
-  box-shadow: 0 0 0 4px var(--seal-soft);
-}
-
-.home-title {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 1.2rem 0 0.95rem;
+  padding-left: clamp(1rem, 1.8vw, 1.55rem);
+  border-left: 2px solid var(--seal);
+  color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(3.4rem, 9.5vw, 6.4rem);
-  font-weight: 600;
-  line-height: 1.02;
-  letter-spacing: 0.03em;
+  font-size: clamp(2.3rem, 5.4vw, 4.1rem);
+  font-size: clamp(2.3rem, min(5.4vw, 8.2dvh), 4.1rem);
+  font-weight: 400;
+  line-height: 1.34;
+  letter-spacing: 0.035em;
+  text-wrap: balance;
 }
 
-.title-seal {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 0.68em;
-  height: 0.68em;
-  border: 1.5px solid var(--seal);
-  border-radius: 0.12em;
-  color: var(--seal);
-  font-size: 0.3em;
+.hero-signature {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.8rem, 1.4vw, 1.1rem);
+  margin-top: clamp(1.15rem, 3vh, 2rem);
+  margin-top: clamp(1.15rem, 3dvh, 2rem);
+  margin-left: clamp(1rem, 1.8vw, 1.55rem);
+}
+
+.hero-name {
+  display: block;
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 2.55vw, 2.15rem);
   font-weight: 400;
-  line-height: 1;
-  letter-spacing: 0;
-  transform: rotate(-8deg);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+}
+
+.hero-name ruby {
+  ruby-align: center;
+}
+
+.hero-name rt {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.34em;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+
+.name-given {
+  margin-left: 0.16em;
+}
+
+.hero-seal {
+  position: relative;
+  flex: none;
+  width: 2.9rem;
+  height: 2.9rem;
+  margin-bottom: -0.1rem;
+  overflow: hidden;
+  border: 1.5px solid var(--seal);
+  border-radius: 0.18rem;
+  background: var(--seal-soft);
+  box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.12);
+  transform: rotate(-7deg);
   user-select: none;
 }
 
-.hero-copy .tagline {
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-  margin-bottom: 0.9rem;
+.hero-seal img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 146%;
+  height: 146%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.7rem;
-  margin-top: 1.8rem;
+  margin-top: clamp(1.2rem, 2.8vh, 1.9rem);
+  margin-top: clamp(1.2rem, 2.8dvh, 1.9rem);
+  margin-left: clamp(1rem, 1.8vw, 1.55rem);
+}
+
+.hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding-bottom: 0.28rem;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.hero-link .arrow {
+  transition: transform 0.25s ease;
+}
+
+.hero-link:hover .arrow {
+  transform: translateX(3px);
 }
 
 .btn {
@@ -489,93 +532,17 @@ p {
 
 .hero-aside {
   position: relative;
-  max-width: 26rem;
+  max-width: 22rem;
   justify-self: end;
 }
 
-.hero-card {
-  position: relative;
-  overflow: hidden;
-  padding: 1.5rem;
+.hero-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  background: linear-gradient(150deg, var(--surface), var(--surface-soft));
   box-shadow: var(--shadow-md);
-  transform: rotate(1.2deg);
-  animation: rise 0.9s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  top: -8rem;
-  right: -6rem;
-  width: 18rem;
-  height: 18rem;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-soft), transparent 70%);
-  pointer-events: none;
-}
-
-.hero-card::after {
-  content: "字";
-  position: absolute;
-  right: -0.3rem;
-  bottom: -2.6rem;
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: 11rem;
-  line-height: 1;
-  opacity: 0.035;
-  pointer-events: none;
-  user-select: none;
-}
-
-.hero-card-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  color: var(--faint);
-  font-family: var(--mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
-}
-
-.hero-quote {
-  position: relative;
-  margin: 2.6rem 0 3rem;
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
-  line-height: 1.7;
-  letter-spacing: 0.02em;
-}
-
-.hero-card-foot {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-}
-
-.hero-seal {
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--seal);
-  border-radius: 0.4rem;
-  color: var(--seal);
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  line-height: 1;
-  transform: rotate(-6deg);
 }
 
 /* ---------- 区块标题 ---------- */
@@ -870,19 +837,29 @@ p {
 }
 
 .about-seal {
-  display: grid;
-  place-items: center;
+  position: relative;
   width: 4rem;
   height: 4rem;
   margin-top: 2.2rem;
+  overflow: hidden;
   border: 1.5px solid var(--seal);
   border-radius: 0.45rem;
-  color: var(--seal);
-  font-family: var(--serif);
-  font-size: 1.8rem;
-  line-height: 1;
+  background: var(--seal-soft);
+  box-shadow: inset 0 0 0 1px rgba(216, 180, 106, 0.12);
   transform: rotate(-7deg);
   user-select: none;
+}
+
+.about-seal img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
 }
 
 .about-body {
@@ -1265,6 +1242,49 @@ code {
 
 /* ---------- 响应式 ---------- */
 
+/* 矮屏笔记本：收紧立绘和页脚，让首页仍能收进一屏 */
+@media (min-width: 961px) and (max-height: 900px) {
+  body.home .hero {
+    padding-top: 0.75rem;
+  }
+
+  .hero-portrait {
+    width: auto;
+    max-height: 58vh;
+    max-height: min(58vh, calc(100dvh - 19.5rem));
+    margin-left: auto;
+  }
+
+  body.home .wrap {
+    padding-bottom: 0.4rem;
+  }
+
+  body.home .footer-inner {
+    padding-top: 0.55rem;
+    padding-bottom: 0.7rem;
+  }
+}
+
+/* 更矮的屏幕：落款和间距再收一档 */
+@media (min-width: 961px) and (max-height: 860px) {
+  .hero-name {
+    font-size: clamp(1.6rem, 2.4vw, 2rem);
+  }
+
+  .hero-seal {
+    width: 2.65rem;
+    height: 2.65rem;
+  }
+
+  .hero-signature {
+    margin-top: 1rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.05rem;
+  }
+}
+
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
@@ -1272,9 +1292,9 @@ code {
   }
 
   .hero-aside {
-    justify-self: start;
+    justify-self: center;
     width: 100%;
-    max-width: 28rem;
+    max-width: 22rem;
   }
 
   .about-layout {
@@ -1311,10 +1331,6 @@ code {
 
   .hero {
     padding-top: 2rem;
-  }
-
-  .hero-card {
-    transform: none;
   }
 
   .section-head {
@@ -1358,6 +1374,19 @@ code {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* 窄屏：导航换到第二行，均分宽度 */
+@media (max-width: 430px) {
+  .nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav a {
+    flex: 1;
+    text-align: center;
   }
 }
 
