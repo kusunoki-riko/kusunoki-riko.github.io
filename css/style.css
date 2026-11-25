@@ -246,7 +246,11 @@ body.home::before {
 }
 
 body.home .topbar {
-  background: #070910;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: rgba(7, 9, 16, 0.22);
   border-bottom-color: transparent;
 }
 
@@ -258,7 +262,7 @@ body.home .wrap {
   justify-content: center;
   width: 100%;
   margin-inline: 0;
-  padding-top: clamp(1.2rem, 4vh, 2.4rem);
+  padding-top: 5.4rem;
   padding-bottom: 3.2rem;
 }
 
@@ -500,19 +504,24 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding-bottom: 0.28rem;
-  border-bottom: 1px solid var(--line-strong);
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  letter-spacing: 0.08em;
+  padding: 0.55rem 1.05rem;
+  border: 1px solid rgba(246, 243, 236, 0.62);
+  border-radius: 999px;
+  background: rgba(7, 9, 16, 0.38);
+  color: #f6f3ec;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
   text-decoration: none;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
-  transition: color 0.25s ease, border-color 0.25s ease;
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
 .hero-link:hover {
-  border-color: var(--accent);
-  color: var(--accent-strong);
+  border-color: #f6f3ec;
+  background: rgba(246, 243, 236, 0.16);
+  color: #fff;
 }
 
 .hero-link .arrow {
@@ -1387,13 +1396,8 @@ code {
 
 /* 手机竖屏：画铺满，人留在画面里，诗沉到底下。横屏仍用上面的桌面构图。 */
 @media (max-width: 720px) and (orientation: portrait) {
-  body.home .topbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 40;
-    background: transparent;
+  body.home .site-footer {
+    display: none;
   }
 
   body.home .site-header {
@@ -1430,7 +1434,7 @@ code {
   body.home .wrap {
     justify-content: flex-end;
     padding-top: 4.2rem;
-    padding-bottom: 3.6rem;
+    padding-bottom: 1.5rem;
   }
 
   body.home .wrap::before {
@@ -1457,11 +1461,6 @@ code {
   body.home .hero-signature,
   body.home .hero-actions {
     margin-top: 0.65rem;
-  }
-
-  body.home .footer-inner {
-    padding-top: 0.15rem;
-    padding-bottom: 0.65rem;
   }
 }
 

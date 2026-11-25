@@ -50,7 +50,7 @@ python -m http.server 8080
 
 ### 图片与字体
 
-- `images/background.png`：首页封面。宽屏时画面从页眉下沿开始；手机竖屏时铺满，诗和落款沉到底下。
+- `images/background.png`：首页封面。宽屏和竖屏都铺在页眉后面，页眉是磨砂的。竖屏不显示页脚，诗和落款沉到底下。
 - `images/portrait.jpg`：以前放在首页右侧的立绘，封面改版后首页不再引用。
 - `images/icon.png`：页眉的小头像和浏览器图标。
 - `images/seal-nan.png`：篆书「楠」印的透明 PNG，首页与关于页共用。想换字，重新渲染一张同名图片即可。
