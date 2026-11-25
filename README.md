@@ -38,7 +38,7 @@ python -m http.server 8080
 1. 复制整个 `writing/tide/` 文件夹，改成新的目录名。
 2. 改 `index.html` 里的简介和章节目录。
 3. 正文在 `01.html`。下一章复制为 `02.html`，并在目录页加一行。章节底部的「目录」或「上一章 / 下一章」链接要手改。
-4. 在 `writing/index.html` 登记这篇作品。想出现在首页「最近」，再去根目录的 `index.html` 加一条。
+4. 在 `writing/index.html` 登记这篇作品。
 
 正文每一段用一个 `<p>`。中文段首缩进由样式负责，不用自己打空格。
 
@@ -50,11 +50,12 @@ python -m http.server 8080
 
 ### 图片与字体
 
-- `images/portrait.jpg`：首页右侧的立绘。
+- `images/background.png`：首页封面。宽屏时画面从页眉下沿开始；手机竖屏时铺满，诗和落款沉到底下。
+- `images/portrait.jpg`：以前放在首页右侧的立绘，封面改版后首页不再引用。
 - `images/icon.png`：页眉的小头像和浏览器图标。
 - `images/seal-nan.png`：篆书「楠」印的透明 PNG，首页与关于页共用。想换字，重新渲染一张同名图片即可。
 
-正文字体是霞鹜文楷，通过 jsDelivr 引入；标题使用系统宋体，不额外加载字体文件。
+全站字体是霞鹜文楷，通过 jsDelivr 引入。
 
 ## 字体与素材授权
 
