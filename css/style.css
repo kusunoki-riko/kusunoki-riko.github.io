@@ -4,10 +4,19 @@
    配色取自首页立绘：深靛黑、雾蓝紫、月光金。
    改气质主要动 :root 里的颜色与字体。
    正文字体：霞鹜文楷（jsDelivr，常规 400 + 粗体 700）。
+   署名：志莽行书，只收录「楠理子」三字，见 fonts/。
    ========================================================= */
 
 @import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-regular.css");
 @import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/lxgwwenkai-bold.css");
+
+@font-face {
+  font-family: "Zhi Mang Xing";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/zhi-mang-xing-subset.woff2") format("woff2");
+}
 
 :root {
   color-scheme: dark;
@@ -47,6 +56,7 @@
   --reading: 42rem;
 
   --serif: "LXGW WenKai", "霞鹜文楷", "KaiTi", "楷体", "STKaiti", serif;
+  --sign: "Zhi Mang Xing", "LXGW WenKai", cursive;
   --sans: "LXGW WenKai", "霞鹜文楷", "KaiTi", "楷体", "STKaiti", sans-serif;
   --mono: "LXGW WenKai", "霞鹜文楷", "KaiTi", "楷体", "STKaiti", sans-serif;
 }
@@ -865,10 +875,27 @@ p {
   top: 7rem;
 }
 
-.about-head h1 {
-  margin-bottom: 0.9rem;
-  font-size: clamp(3rem, 7vw, 4.6rem);
-  line-height: 1;
+.about-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.about-portrait img {
+  width: 100%;
+}
+
+.about-portrait h1 {
+  width: 100%;
+  margin: 0.05rem 0 0;
+  font-family: var(--sign);
+  font-weight: 400;
+  font-size: clamp(3.15rem, 6.2vw, 4.35rem);
+  line-height: 1.15;
+  letter-spacing: 0.16em;
+  text-align: center;
 }
 
 .about-seal {
@@ -902,12 +929,214 @@ p {
   animation: rise 0.7s 0.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-.about-body > p:not(.lede) {
+.about-body > p:not(.lede),
+.about-body li {
   color: var(--ink-soft);
 }
 
-.about-body .entry-list {
-  margin-top: 1.4rem;
+.about-body del {
+  color: var(--faint);
+  text-decoration-thickness: 1px;
+}
+
+.about-likes {
+  margin: 0 0 1.15rem;
+  padding: 0;
+  list-style: none;
+}
+
+.about-likes li {
+  position: relative;
+  margin: 0 0 0.85rem;
+  padding-left: 1.15em;
+}
+
+.about-likes li::before {
+  content: "";
+  position: absolute;
+  left: 0.12em;
+  top: 0.72em;
+  width: 0.36em;
+  height: 0.36em;
+  border: 1px solid var(--seal);
+  border-radius: 0.06em;
+  transform: rotate(45deg);
+}
+
+.about-verse {
+  color: var(--ink);
+  letter-spacing: 0.08em;
+}
+
+/* ---------- 关于页下方的板块 ---------- */
+
+.about-boards {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.2rem, 4vw, 3rem);
+  margin-top: clamp(2.6rem, 5vw, 3.6rem);
+  padding-top: clamp(1.6rem, 3vw, 2.2rem);
+  border-top: 1px solid var(--line);
+}
+
+.about-board .section-head {
+  margin-bottom: 0.95rem;
+}
+
+.social-grid,
+.game-grid,
+.cover-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 0.75rem;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 4.6rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.social-mark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.45rem;
+  height: 2.45rem;
+  border-radius: 0.7rem;
+  background: var(--seal-soft);
+  color: var(--seal);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.social-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  min-width: 0;
+}
+
+.social-name,
+.game-title,
+.cover-title {
+  color: var(--ink);
+  font-family: var(--serif);
+  letter-spacing: 0.04em;
+}
+
+.social-name {
+  font-size: 1.02rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.social-handle,
+.game-sub {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.social-handle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.game-grid,
+.cover-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.28rem;
+  width: 9.4rem;
+  min-height: 5.5rem;
+  margin: 0;
+  padding: 0.8rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.game-title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.game-sub {
+  margin: 0;
+}
+
+.cover-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 8.4rem;
+  margin: 0;
+  padding: 0.42rem 0.42rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.cover-grid-wide .cover-card {
+  width: 12.4rem;
+}
+
+.cover-slot,
+.cover-card img {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0.4rem;
+  background: var(--surface-soft);
+  color: var(--faint);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  object-fit: cover;
+}
+
+.cover-grid-wide .cover-slot,
+.cover-grid-wide .cover-card img {
+  aspect-ratio: 16 / 9;
+}
+
+.cover-title {
+  padding: 0 0.2rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
 }
 
 /* ---------- 角色页 ---------- */
@@ -1322,6 +1551,11 @@ code {
     position: static;
   }
 
+  .about-portrait {
+    width: min(100%, 20rem);
+    margin-inline: auto;
+  }
+
   .about-seal {
     display: none;
   }
@@ -1394,30 +1628,37 @@ code {
   }
 }
 
-/* 手机竖屏：画铺满，人留在画面里，诗沉到底下。横屏仍用上面的桌面构图。 */
+/* 手机竖屏：顶栏跟首页同一套尺寸。首页另外铺满画、藏起页脚。横屏仍用桌面构图。 */
 @media (max-width: 720px) and (orientation: portrait) {
   body.home .site-footer {
     display: none;
   }
 
-  body.home .site-header {
+  /* 内页不要首页那层磨砂，底色仍是现在的深色。 */
+  body:not(.home) .topbar {
+    background: var(--bg);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .site-header {
     flex-wrap: nowrap;
     gap: 0.45rem 0.55rem;
     padding: 0.55rem 0;
   }
 
-  body.home .brand {
+  .brand {
     gap: 0.4rem;
     font-size: 0.95rem;
     letter-spacing: 0.06em;
   }
 
-  body.home .brand-mark {
+  .brand-mark {
     width: 2.15rem;
     height: 2.15rem;
   }
 
-  body.home .nav {
+  .nav {
     width: auto;
     flex: none;
     flex-wrap: nowrap;
@@ -1425,7 +1666,7 @@ code {
     padding: 0.12rem;
   }
 
-  body.home .nav a {
+  .nav a {
     flex: none;
     padding: 0.28rem 0.52rem;
     font-size: 0.78rem;
@@ -1464,8 +1705,8 @@ code {
   }
 }
 
-/* 窄屏：导航换到第二行，均分宽度 */
-@media (max-width: 430px) {
+/* 极窄横屏：导航换到第二行。手机竖屏跟首页一样保持一行。 */
+@media (max-width: 430px) and (orientation: landscape) {
   .nav {
     width: 100%;
     justify-content: center;
