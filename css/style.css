@@ -1407,6 +1407,22 @@ p {
   color: var(--ink);
 }
 
+.prose ruby {
+  ruby-align: center;
+}
+
+.prose rt {
+  color: var(--muted);
+  font-size: 0.62em;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.prose del {
+  color: var(--faint);
+  text-decoration-thickness: 1px;
+}
+
 .end-mark {
   display: flex;
   align-items: center;
