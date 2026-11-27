@@ -861,6 +861,32 @@ p {
   margin-bottom: 0;
 }
 
+.shelf-head {
+  position: relative;
+  max-width: none;
+  padding-bottom: 0;
+}
+
+.shelf-head .tagline {
+  margin-bottom: 0;
+}
+
+.shelf-head + .chapters {
+  margin-top: 2.2rem;
+}
+
+.shelf-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 2.4rem;
+}
+
+.shelf-actions a {
+  text-decoration: none;
+}
+
 /* ---------- 关于页 ---------- */
 
 .about-layout {
@@ -1478,6 +1504,188 @@ p {
   letter-spacing: 0.12em;
 }
 
+.chapter-nav-slot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 10rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.chapter-nav-quad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.chapter-nav.chapter-nav-quad a,
+.chapter-nav.chapter-nav-quad .chapter-nav-slot {
+  min-width: 0;
+  height: 100%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.chapter-nav.chapter-nav-quad > :last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.chapter-nav .is-disabled {
+  color: var(--faint);
+  background: transparent;
+  border-color: var(--line);
+  opacity: 0.45;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+}
+
+.blog-tree {
+  margin-bottom: 1.6rem;
+}
+
+.blog-rail-toggle,
+.blog-group-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.blog-rail-toggle {
+  color: var(--muted);
+}
+
+.blog-tree-body > .kicker {
+  margin: 0 0 0.95rem;
+}
+
+.blog-rail-toggle .kicker {
+  margin: 0;
+}
+
+.blog-tree-mark {
+  flex: none;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 1.5px solid var(--muted);
+  border-bottom: 1.5px solid var(--muted);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.blog-rail-toggle[aria-expanded="true"] .blog-tree-mark {
+  transform: rotate(135deg);
+}
+
+.blog-rail-toggle[aria-expanded="false"] .blog-tree-mark,
+.blog-group-toggle[aria-expanded="false"] .blog-tree-mark {
+  transform: rotate(-45deg);
+}
+
+.blog-tree-group + .blog-tree-group {
+  margin-top: 1.05rem;
+}
+
+.blog-tree-title {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  letter-spacing: 0.04em;
+}
+
+.blog-tree-list {
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0 0 0 0.7rem;
+  border-left: 1px solid var(--line);
+}
+
+.blog-tree-list a {
+  display: block;
+  padding: 0.38rem 0.7rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.blog-tree-list a:hover,
+.blog-tree-list a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.blog-tree-list a[aria-current="page"] {
+  border-radius: 0.45rem;
+  background: var(--surface);
+}
+
+@media (min-width: 1100px) {
+  .wrap.prose.blog-read {
+    width: min(68rem, calc(100% - 2.5rem));
+    display: grid;
+    grid-template-columns: 13rem minmax(0, var(--reading));
+    justify-content: center;
+    column-gap: 3rem;
+    align-items: start;
+  }
+
+  .blog-read .blog-tree {
+    position: sticky;
+    top: 6.6rem;
+    margin: 0;
+    max-height: calc(100vh - 8rem);
+    overflow: auto;
+  }
+
+  .blog-read-main {
+    position: relative;
+  }
+
+  .blog-rail-toggle {
+    position: sticky;
+    top: calc(50vh - 1.4rem);
+    z-index: 6;
+    float: left;
+    width: 1.35rem;
+    height: 2.8rem;
+    margin: 0 0 -2.8rem -2.15rem;
+    padding: 0;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--bg);
+  }
+
+  .blog-rail-toggle .kicker {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .wrap.prose.blog-read.is-rail-closed {
+    grid-template-columns: minmax(0, var(--reading));
+  }
+
+  .blog-read.is-rail-closed .blog-tree {
+    display: none;
+  }
+}
+
 /* ---------- 404 ---------- */
 
 .error-page {
@@ -1642,6 +1850,14 @@ code {
     gap: 0.5rem;
   }
 
+  .shelf-actions {
+    margin-top: 1.6rem;
+  }
+
+  .shelf-head + .chapters {
+    margin-top: clamp(2rem, 6vw, 3rem);
+  }
+
   .character-hero {
     grid-template-columns: 1fr;
     align-items: start;
@@ -1672,6 +1888,10 @@ code {
   .chapter-nav a + a {
     text-align: left;
     align-items: flex-start;
+  }
+
+  .chapter-nav-quad {
+    grid-template-columns: 1fr 1fr;
   }
 
   .footer-inner {
@@ -1837,6 +2057,7 @@ code {
   .draft-note,
   .chapter-nav,
   .reading-progress,
+  .blog-tree,
   .skip {
     display: none;
   }
